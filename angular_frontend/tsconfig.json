@@ -1,0 +1,60 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Not part of `strict`, but it catches the very common bug of indexing an
+       array and assuming the result exists. */
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    /* Barrel-free path aliases: imports state their layer, which makes an
+       illegal dependency direction (core importing a feature) obvious in review. */
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@features/*": ["src/app/features/*"],
+      "@layout/*": ["src/app/layout/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    /* Surfaces template expressions that can never be null as redundant checks,
+       and vice versa. */
+    "strictNullInputTypes": true,
+    "extendedDiagnostics": {
+      "checks": {
+        "invalidBananaInBox": "error",
+        "nullishCoalescingNotNullable": "error",
+        "optionalChainNotNullable": "error",
+        "missingControlFlowDirective": "error",
+        "textAttributeNotBinding": "error",
+        "uninvokedFunctionInEventBinding": "error"
+      }
+    }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

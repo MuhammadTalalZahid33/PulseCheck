@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/*
+ * Tailwind v4 is configured in CSS. These tokens generate the utilities
+ * (bg-ink-900, text-up-400, border-ink-700, ...) used across the app.
+ * Greens/reds are picked to clear 4.5:1 against the dark surfaces.
+ */
+@theme {
+  --color-ink-950: #07090d;
+  --color-ink-900: #0d1017;
+  --color-ink-850: #12161f;
+  --color-ink-800: #191f2b;
+  --color-ink-700: #262f3f;
+  --color-ink-600: #3a465a;
+
+  --color-mute-400: #8b98ad;
+  --color-mute-200: #c7d0dd;
+
+  --color-up-400: #4ade80;
+  --color-up-500: #22c55e;
+  --color-up-950: #05271a;
+
+  --color-down-400: #f87171;
+  --color-down-500: #ef4444;
+  --color-down-950: #300f10;
+
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-mute-200);
+}
+
+/* Visible focus ring everywhere — keyboard users need to see where they are. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}
+
+/* Scrollable panels (incident timeline, recent checks). The default Windows
+   scrollbar is a bright slab against a dark panel, so tone it down. */
+.scroll-panel {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+  overscroll-behavior: contain;
+}
+
+.scroll-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background-color: var(--color-ink-600);
+  border-radius: 9999px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-mute-400);
+}
